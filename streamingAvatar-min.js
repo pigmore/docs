@@ -220,14 +220,14 @@ a=mid:video
         min-width: 100%;
       }
       button,input {
-        color: rgba(255, 255, 255, 0.88);
+        color: rgb(52 52 52 / 88%);
         border-radius: 8px;
-        border: 1px solid transparent;
+        border: 1px solid #8e8e8e;
         padding: 0.6em 1.2em;
         font-size: 1em;
         font-weight: 500;
         font-family: inherit;
-        background-color: #1a1a1a;
+        background-color: #ffffff;
         cursor: pointer;
         transition: border-color 0.25s;
       }
@@ -236,7 +236,7 @@ a=mid:video
         border-color: #646cff;
       }
       button:disabled:hover,input:disabled:hover {
-        border-color: #646cff00;
+        border: 1px solid #8e8e8e;
         cursor: not-allowed;
       }
 
