@@ -43,9 +43,11 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
 ```html
   <script src="https://cdn.jsdelivr.net/gh/pigmore/docs/streamingAvatar-min.js"></script>
 ```
-```js
-  var myStreamingAvatar = new StreamingAvatar({ token: "your-api-token" })
-  myStreamingAvatar.initDom('yourAvatarContainer')
+```html
+  <script type="text/javascript">
+    var myStreamingAvatar = new StreamingAvatar({ token: "your-api-token" })
+    myStreamingAvatar.initDom('yourAvatarContainer')
+  </script>
 ```
 - [Learn how to get your api token](/authentication/usage#get-the-token)
 
