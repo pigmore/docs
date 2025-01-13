@@ -3,39 +3,39 @@ title: "Akool Jssdk API Reference"
 description: "Learn what is in the Akool-Jssdk"
 ---
 
-##__Documentation for StreamingAvatar Class__
+## Documentation for StreamingAvatar Class
 
 This document provides a detailed explanation of the  `StreamingAvatar`  class and its usage, including the parameters, methods, events, and examples.
 
 ----
 
-###__Class:  `StreamingAvatar` __
+### Class: `StreamingAvatar`
 
 The  `StreamingAvatar`  class provides a framework for managing a streaming avatar session. It allows you to start a session, send messages, toggle the microphone, and handle various streaming events.
 
 ----
 
-####__Constructor__
+#### Constructor
 
 ```
 const avatar = new StreamingAvatar({ token: "access-token" });
 ```
 
--  __Parameters__ :
+-  Parameters :
 -  `token`  (string, required): An access token required to authenticate and establish the streaming session.
 
--  __Description__ :
+-  Description :
 The constructor initializes a new instance of the  `StreamingAvatar`  class. You must provide a valid access token to interact with the streaming service.
 
 ----
 
-###__Methods__
+### Methods
 
-####__1.  `startSession(params: StartSessionParams): Promise<void>` __
+#### 1.  `startSession(params: StartSessionParams): Promise<void>`
 
 Starts a streaming session with the avatar.
 
--  __Parameters__ :
+-  Parameters :
 -  `params`  (object, optional): An object containing the following optional properties:
 -  `avatarId`  (string): The ID of the avatar to use in the session.
 -  `voiceId`  (string): The ID of the voice to use for the avatar.
@@ -43,10 +43,10 @@ Starts a streaming session with the avatar.
 -  `modeType`  (string): The mode of the session (e.g., "chat", "interactive").
 -  `duration`  (number): The duration of the session in seconds.
 
--  __Returns__ :
+-  Returns :
 - A  `Promise`  that resolves when the session has successfully started.
 
--  __Example__ :
+-  Example :
 ```
 const params = {
   avatarId: "dvp_Tristan_cloth2_1080P",
@@ -60,57 +60,57 @@ await avatar.startSession(params);
 
 ----
 
-####__2.  `toggleMic(): void` __
+#### 2.  `toggleMic(): void`
 
 Toggles the microphone on or off during the streaming session.
 
--  __Parameters__ : None.
+-  Parameters : None.
 
--  __Returns__ : Nothing.
+-  Returns : Nothing.
 
--  __Example__ :
+-  Example :
 ```
 avatar.toggleMic();
 ```
 
 ----
 
-####__3.  `sendMessage(str: string): void` __
+#### 3.  `sendMessage(str: string): void`
 
 Sends a message to the streaming avatar.
 
--  __Parameters__ :
+-  Parameters :
 -  `str`  (string, required): The message to send to the avatar.
 
--  __Returns__ : Nothing.
+-  Returns : Nothing.
 
--  __Example__ :
+-  Example :
 ```
 avatar.sendMessage("Hello, how are you?");
 ```
 
 ----
 
-####__4.  `closeStreaming(): void` __
+#### 4.  `closeStreaming(): void`
 
 Closes the streaming session and cleans up any resources.
 
--  __Parameters__ : None.
+-  Parameters : None.
 
--  __Returns__ : Nothing.
+-  Returns : Nothing.
 
--  __Example__ :
+-  Example :
 ```
 avatar.closeStreaming();
 ```
 
 ----
 
-####__5.  `on(event: StreamEvents, handler: Function): void` __
+#### 5.  `on(event: StreamEvents, handler: Function): void`
 
 Registers an event listener for a specific streaming event.
 
--  __Parameters__ :
+-  Parameters :
 -  `event`  (StreamEvents, required): The name of the event to listen for. Possible values are:
 -  `StreamEvents.READY` : Triggered when the stream is ready.
 -  `StreamEvents.ONMESSAGE` : Triggered when a message is received from the avatar.
@@ -118,45 +118,45 @@ Registers an event listener for a specific streaming event.
 -  `StreamEvents.CLOSED` : Triggered when the stream is closed.
 -  `handler`  (Function, required): The callback function to handle the event.
 
--  __Returns__ : Nothing.
+-  Returns : Nothing.
 
--  __Example__ :
+-  Example :
 ```
 avatar.on(StreamEvents.READY, handleStreamReady);
 ```
 
 ----
 
-####__6.  `off(event: StreamEvents, handler: Function): void` __
+#### 6.  `off(event: StreamEvents, handler: Function): void`
 
 Deregisters an event listener for a specific streaming event.
 
--  __Parameters__ :
+-  Parameters :
 -  `event`  (StreamEvents, required): The name of the event to stop listening for.
 -  `handler`  (Function, required): The callback function to remove.
 
--  __Returns__ : Nothing.
+-  Returns : Nothing.
 
--  __Example__ :
+-  Example :
 ```
 avatar.off(StreamEvents.READY, handleStreamReady);
 ```
 
 ----
 
-###__Events__
+### Events
 
 The  `StreamingAvatar`  class emits the following events during a streaming session:
 
-####__1.  `StreamEvents.READY` __
+#### 1.  `StreamEvents.READY`
 
--  __Description__ :
+-  Description :
 Triggered when the streaming session is ready to start.
 
--  __Callback Parameters__ :
+-  Callback Parameters :
 -  `event.detail` : An object containing details about the event.
 
--  __Example__ :
+-  Example :
 ```
 function handleStreamReady(event) {
   console.log("Stream is ready:", event.detail);
@@ -166,15 +166,15 @@ avatar.on(StreamEvents.READY, handleStreamReady);
 
 ----
 
-####__2.  `StreamEvents.ONMESSAGE` __
+#### 2.  `StreamEvents.ONMESSAGE`
 
--  __Description__ :
+-  Description :
 Triggered when a message is received from the avatar.
 
--  __Callback Parameters__ :
+-  Callback Parameters :
 -  `event.detail` : An object containing the received message.
 
--  __Example__ :
+-  Example :
 ```
 function handleMessageReceive(event) {
   console.log("Message:", event.detail);
@@ -184,15 +184,15 @@ avatar.on(StreamEvents.ONMESSAGE, handleMessageReceive);
 
 ----
 
-####__3.  `StreamEvents.ERROR` __
+#### 3.  `StreamEvents.ERROR`
 
--  __Description__ :
+-  Description :
 Triggered when an error occurs during the streaming session.
 
--  __Callback Parameters__ :
+-  Callback Parameters :
 -  `event.detail.msg` : A string containing the error message.
 
--  __Example__ :
+-  Example :
 ```
 function handleERROR(event) {
   console.error("ERROR has occurred:", event.detail.msg);
@@ -202,15 +202,15 @@ avatar.on(StreamEvents.ERROR, handleERROR);
 
 ----
 
-####__4.  `StreamEvents.CLOSED` __
+#### 4.  `StreamEvents.CLOSED`
 
--  __Description__ :
+-  Description :
 Triggered when the streaming session is closed.
 
--  __Callback Parameters__ :
+-  Callback Parameters :
 -  `event.detail` : An object containing details about the closing event.
 
--  __Example__ :
+-  Example :
 ```
 function handleStreamClose(event) {
   console.log("Stream is closed:", event.detail);
@@ -220,9 +220,9 @@ avatar.on(StreamEvents.CLOSED, handleStreamClose);
 
 ----
 
-###__Best Practices__
+### Best Practices
 
-1.  __Event Management__ :
+1.  Event Management :
 - Always register event listeners using the  `on()`  method.
 - Remove event listeners when they are no longer needed using the  `off()` method to prevent memory leaks.
 ```
@@ -234,13 +234,13 @@ avatar.off(StreamEvents.READY, handleStreamReady);
 avatar.off(StreamEvents.ONMESSAGE, handleMessageReceive);
 ```
 
-2.  __Error Handling__ :
+2.  Error Handling :
 - Always listen for the  `StreamEvents.ERROR`  event to handle any issues that may occur during the session.
 ```
 avatar.on(StreamEvents.ERROR, handleERROR);
 ```
 
-3.  __Session Cleanup__ :
+3.  Session Cleanup :
 - Make sure to call  `closeStreaming()`  when the session is no longer needed to release resources.
 ```
 avatar.closeStreaming();
@@ -248,7 +248,7 @@ avatar.closeStreaming();
 
 ----
 
-###__Example Usage__
+### Example Usage
 
 Here’s a complete example of how to use the  `StreamingAvatar`  class:
 
