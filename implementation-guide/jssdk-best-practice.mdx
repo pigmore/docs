@@ -75,7 +75,7 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
     const paramsWithCredentials = await YOUR_BACK_END_API_FOR_START_SESSION()
   </script>
 ```
-YOUR_BACK_END_API_FOR_START_SESSION may like below:
+<Tip> YOUR_BACK_END_API_FOR_START_SESSION may like below:</Tip>
 
 ```js
   async function fetchAccessToken() {
@@ -128,7 +128,7 @@ YOUR_BACK_END_API_FOR_START_SESSION may like below:
         duration = 300;
   const paramsWithCredentials = await createSession(token,avatar_id,duration)
 ```
-- Make sure the YOUR_BACK_END_API_FOR_START_SESSION return the paramsWithCredentials from your backend
+<Note> Make sure the YOUR_BACK_END_API_FOR_START_SESSION return the paramsWithCredentials from your backend </Note>
 
 4. Sign up functions for steaming events and button click events:
 
