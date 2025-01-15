@@ -76,6 +76,7 @@
           "group": "Implementation jssdk",
           "pages": [
             "implementation-guide/jssdk-start",
+            "implementation-guide/jssdk-best-practice"
             "implementation-guide/jssdk-api"
           ]
         }
