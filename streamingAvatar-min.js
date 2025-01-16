@@ -194,6 +194,7 @@ a=mid:video
         background-color: #00000092;
         animation: appendAnimation ease-in-out .3s;
         animation-iteration-count: 1;
+        color:#fff;
       }
       @keyframes appendAnimation{
         0% {
