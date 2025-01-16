@@ -17,7 +17,7 @@ The  `StreamingAvatar`  class provides a framework for managing a streaming avat
 
 #### Constructor
 
-```
+```js
 const avatar = new StreamingAvatar({ token: "access-token" });
 ```
 
@@ -47,7 +47,7 @@ Starts a streaming session with the avatar.
 - A  `Promise`  that resolves when the session has successfully started.
 
 -  Example :
-```
+```js
 const params = {
   avatarId: "dvp_Tristan_cloth2_1080P",
   voiceId: "iP95p4xoKVk53GoZ742B",
@@ -69,7 +69,7 @@ Toggles the microphone on or off during the streaming session.
 -  Returns : Nothing.
 
 -  Example :
-```
+```js
 avatar.toggleMic();
 ```
 
@@ -85,7 +85,7 @@ Sends a message to the streaming avatar.
 -  Returns : Nothing.
 
 -  Example :
-```
+```js
 avatar.sendMessage("Hello, how are you?");
 ```
 
@@ -100,7 +100,7 @@ Closes the streaming session and cleans up any resources.
 -  Returns : Nothing.
 
 -  Example :
-```
+```js
 avatar.closeStreaming();
 ```
 
@@ -121,7 +121,7 @@ Registers an event listener for a specific streaming event.
 -  Returns : Nothing.
 
 -  Example :
-```
+```js
 avatar.on(StreamEvents.READY, handleStreamReady);
 ```
 
@@ -138,7 +138,7 @@ Deregisters an event listener for a specific streaming event.
 -  Returns : Nothing.
 
 -  Example :
-```
+```js
 avatar.off(StreamEvents.READY, handleStreamReady);
 ```
 
@@ -157,7 +157,7 @@ Triggered when the streaming session is ready to start.
 -  `event.detail` : An object containing details about the event.
 
 -  Example :
-```
+```js
 function handleStreamReady(event) {
   console.log("Stream is ready:", event.detail);
 }
@@ -175,7 +175,7 @@ Triggered when a message is received from the avatar.
 -  `event.detail` : An object containing the received message.
 
 -  Example :
-```
+```js
 function handleMessageReceive(event) {
   console.log("Message:", event.detail);
 }
@@ -193,7 +193,7 @@ Triggered when an error occurs during the streaming session.
 -  `event.detail.msg` : A string containing the error message.
 
 -  Example :
-```
+```js
 function handleERROR(event) {
   console.error("ERROR has occurred:", event.detail.msg);
 }
@@ -211,7 +211,7 @@ Triggered when the streaming session is closed.
 -  `event.detail` : An object containing details about the closing event.
 
 -  Example :
-```
+```js
 function handleStreamClose(event) {
   console.log("Stream is closed:", event.detail);
 }
@@ -225,7 +225,7 @@ avatar.on(StreamEvents.CLOSED, handleStreamClose);
 1.  Event Management :
 - Always register event listeners using the  `on()`  method.
 - Remove event listeners when they are no longer needed using the  `off()` method to prevent memory leaks.
-```
+```js
 // Add event listeners
 avatar.on(StreamEvents.READY, handleStreamReady);
 avatar.on(StreamEvents.ONMESSAGE, handleMessageReceive);
@@ -236,13 +236,13 @@ avatar.off(StreamEvents.ONMESSAGE, handleMessageReceive);
 
 2.  Error Handling :
 - Always listen for the  `StreamEvents.ERROR`  event to handle any issues that may occur during the session.
-```
+```js
 avatar.on(StreamEvents.ERROR, handleERROR);
 ```
 
 3.  Session Cleanup :
 - Make sure to call  `closeStreaming()`  when the session is no longer needed to release resources.
-```
+```js
 avatar.closeStreaming();
 ```
 
@@ -252,14 +252,14 @@ avatar.closeStreaming();
 
 Here’s a complete example of how to use the  `StreamingAvatar`  class:
 
-```
+```js
 const avatar = new StreamingAvatar({ token: "access-token" });
 
 const params = {
-  avatarId: "12345",
-  voiceId: "en-US-Wavenet-D",
-  language: "en-US",
-  modeType: "chat",
+  avatarId: "dvp_Tristan_cloth2_1080P",
+  voiceId: "iP95p4xoKVk53GoZ742B",
+  language: "en",
+  modeType: "Dialogue",
   duration: 300,
 };
 
