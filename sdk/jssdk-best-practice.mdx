@@ -1,11 +1,11 @@
 ---
-title: "Akool SDK Best Practice"
-description: "Learn how implement Akool SDK step by step"
+title: "Streaming Avatar SDK Best Practice"
+description: "Learn how implement Streaming Avatar SDK step by step"
 ---
 
 ## Overview
 
-When implementing a JavaScript SDK, especially one that interacts with sensitive resources or APIs, it is critical to ensure the security of private keys, tokens, and other sensitive credentials. Exposing such sensitive information in a client-side environment (e.g., browsers) can lead to vulnerabilities, including unauthorized access, token theft, and API abuse. This document outlines best practices for securing private keys and tokens in your Akool SDK implementation while exposing only the necessary session data to the client.
+When implementing a JavaScript SDK, especially one that interacts with sensitive resources or APIs, it is critical to ensure the security of private keys, tokens, and other sensitive credentials. Exposing such sensitive information in a client-side environment (e.g., browsers) can lead to vulnerabilities, including unauthorized access, token theft, and API abuse. This document outlines best practices for securing private keys and tokens in your Streaming Avatar SDK implementation while exposing only the necessary session data to the client.
 
 - Never Expose Private Keys in the Client-Side Code
 - Use Short-Lived Session as token
@@ -25,7 +25,7 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
 
 ## Getting Started
 
-1.To get started with the Akool SDK, you just need one html page with lots of elements like below:
+1.To get started with the Streaming Avatar SDK, you just need one html page with lots of elements like below:
 
 ```html
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Akool SDK</title>
+  <title>Streaming Avatar SDK</title>
 </head>
 <body>
   <div id="app">
@@ -59,7 +59,7 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
 </body>
 </html>
 ```
-2.importing Akool SDK:
+2.importing Streaming Avatar SDK:
 
 ```html
   <script src="https://cdn.jsdelivr.net/gh/pigmore/docs/streamingAvatar-min.js"></script>
@@ -203,5 +203,5 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
 ```
 
 ## Additional Resources
-- [AKool SDK API Interface](/implementation-guide/jssdk-api)
+- [Streaming Avatar SDK API Interface](/implementation-guide/jssdk-api)
 - [AKool OpenAPI Error Codes](/ai-tools-suite/live-avatar#response-code-description)
