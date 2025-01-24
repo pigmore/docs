@@ -63,6 +63,20 @@ The integration uses Agora's Real-Time Communication (RTC) SDK for reliable, low
 ```
 2.Importing Streaming Avatar SDK and a few js code to access the interactive avatar stream.
 
+```bash
+  npm install @akool/streaming-avatar-sdk
+  # or
+  yarn add @akool/streaming-avatar-sdk
+```
+
+```js
+  import { StreamingAvatar,StreamEvents } from 'streaming-avatar-sdk'
+  const myStreamingAvatar = new StreamingAvatar({ token: "your-api-token" })
+  myStreamingAvatar.initDom('yourAvatarContainer')
+```
+
+or by vanilla js way
+
 ```html
   <script src="https://cdn.jsdelivr.net/gh/pigmore/docs/streamingAvatar-min.js"></script>
 ```
